@@ -1,4 +1,6 @@
 // 静态资源数据
+
+const space = "&nbsp&nbsp&nbsp&nbsp&nbsp";
 const resources = [
     { id: 1, name: 'Minecraft', category: 'game', description: '一款沙盒游戏，支持多人在线', downloadLink: 'https://expover.iiu/minecraft', iconLink: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/logos/Homepage_Gameplay-Trailer_MC-OV-logo_300x300.png' },
     { id: 2, name: 'Photoshop', category: 'software', description: '图像编辑软件，功能强大', downloadLink: 'https://expover.iiu/photoshop', iconLink: 'https://helpx.adobe.com/content/dam/help/mnemonics/ps_cc_app_RGB.svg' },
@@ -16,7 +18,6 @@ function loadResources() {
         const div = document.createElement('div');
         div.id = "content";
         var imagesrc = "";
-        const space = "&nbsp&nbsp&nbsp&nbsp&nbsp";
         if(resource.iconLink.length > 0){imagesrc = resource.iconLink}
         else{imagesrc = "image/nullicon.png"}
         div.innerHTML = `<a href="resource.html?id=${resource.id}"><div id="content_pic"><img src="${imagesrc}" alt="${resource.name}" width=100px height=100px></div><div id="content_info"><h1>${resource.name}</h1></p>${space}${resource.description} </div></a>`;
@@ -36,7 +37,6 @@ function loadCategoryResources() {
         const div = document.createElement('div');
         div.id = "content";
         var imagesrc = "";
-        const space = "&nbsp&nbsp&nbsp&nbsp&nbsp";
         if(resource.iconLink.length > 0){imagesrc = resource.iconLink}
         else{imagesrc = "image/nullicon.png"}
         div.innerHTML = `<a href="resource.html?id=${resource.id}"><div id="content_pic"><img src="${imagesrc}" alt="${resource.name}" width=100px height=100px></div><div id="content_info"><h1>${resource.name}</h1></p>${space}${resource.description} </div></a>`;
@@ -54,7 +54,6 @@ function searchResources() {
         const div = document.createElement('div');
         div.id = "content";
         var imagesrc = "";
-        const space = "&nbsp&nbsp&nbsp&nbsp&nbsp";
         if(resource.iconLink.length > 0){imagesrc = resource.iconLink}
         else{imagesrc = "image/nullicon.png"}
         div.innerHTML = `<a href="resource.html?id=${resource.id}"><div id="content_pic"><img src="${imagesrc}" alt="${resource.name}" width=100px height=100px></div><div id="content_info"><h1>${resource.name}</h1></p>${space}${resource.description} </div></a>`;
