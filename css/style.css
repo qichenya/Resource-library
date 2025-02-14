@@ -1,3 +1,4 @@
+/* 2025-02-15 by:4c01   zako qichen*/
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -27,13 +28,65 @@ main {
     padding: 20px;
 }
 
+h1 {
+    font-size:large;
+}
+
+/* category的自适应 */
 .categories ul, .resources ul {
     list-style-type: none;
     padding: 0;
 }
+@media (max-width: 880px) {
+    .categories ul, .resources ul {
+        list-style-type: none;
+        padding-left: 9%;
+        padding-right: 11%;
+    }
+}
 
-.categories ul li, .resources ul li {
-    margin-bottom: 10px;
+@media (min-width: 1300px) {
+    .categories ul, .resources ul {
+        list-style-type: none;
+        padding-left: 9%;
+        padding-right: 11%;
+    }
+}
+/* 资源的样式awa */
+div#content {
+    float:left;
+    padding-left: 0px;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 20px;
+    padding-bottom: 10px;
+    background-color: #eee;
+    border-radius: 10px;
+    border: 10px solid #eee;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    height: 110px;
+    width: 300px;
+}
+div#content_info {
+    float: right;
+    overflow-x: auto;
+    overflow: hidden;
+    height: 110px;
+    width: 195px;
+    padding-right: 5px;
+}
+#content_info h1{
+    text-align: center;
+    font-size: larger;
+    margin-top: 10px;
+}
+div#content_pic {
+    float: right;
+    overflow-x: auto;
+    overflow: hidden;
+    height: 100px;
+    width: 100px;
 }
 
 a {
