@@ -38,7 +38,6 @@ main {
 div#content_info h1 {
     font-size: large;
 }
-
 div#content {
     float:left;
     padding-left: 0px;
@@ -51,7 +50,7 @@ div#content {
     border-radius: 30px;
     border: 10px solid #eee;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
-    height: 110px;
+    height: 145px;
     width: 300px;
 }
 div#content_info {
@@ -73,6 +72,27 @@ div#content_pic {
     overflow: hidden;
     height: 100px;
     width: 100px;
+}
+div#linkbox {
+    float: left;
+    height: 50px;
+    width: 100%;
+    padding: 0px;
+}
+div#download {
+    float: right;
+    overflow-x: auto;
+    height: 40px;
+    width: 50%;
+    border-radius: 10px;
+    border: 0px solid #eee;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+div#download h2 {
+    margin: 0px;
+    margin-top: 9px;
+    font-size: 16px;
+    text-align: center;
 }
 
 a {
