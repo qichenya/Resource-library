@@ -45,10 +45,18 @@ function loadCategoryResources() {
 }
 
 // 搜索功能
-function searchResources() {
+function searchResources(categoryfilter) {
     const searchQuery = document.getElementById('search').value.toLowerCase();
-    const filteredResources = resources.filter(resource => resource.name.toLowerCase().includes(searchQuery));
+    const queryedResources = resources.filter(resource => resource.name.toLowerCase().includes(searchQuery));
     const resourcesList = document.getElementById('resources-list');
+    var filteredResources,categoryName;
+    if(categoryfilter == "category"){
+        categoryName = new URLSearchParams(window.location.search).get('category');
+        filteredResources = queryedResources.filter(resource => resource.category == categoryName)
+    }
+    else if(categoryfilter == ""){
+        filteredResources = queryedResources
+    }
     resourcesList.innerHTML = '';
     filteredResources.forEach(resource => {
         const div = document.createElement('div');
