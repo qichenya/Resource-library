@@ -2,11 +2,9 @@
 
 const space = "&nbsp&nbsp&nbsp&nbsp&nbsp";
 const resources = [
-    { id: 1, name: 'Minecraft', category: 'game', description: '一款沙盒游戏，支持多人在线', downloadLink: 'https://expover.iiu/minecraft', officialLink: "", iconLink: 'https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/logos/Homepage_Gameplay-Trailer_MC-OV-logo_300x300.png' },
-    { id: 2, name: 'Photoshop', category: 'software', description: '图像编辑软件，功能强大', downloadLink: 'https://expover.iiu/photoshop', officialLink: "", iconLink: 'https://helpx.adobe.com/content/dam/help/mnemonics/ps_cc_app_RGB.svg' },
-    { id: 3, name: 'Notepad++', category: 'tool', description: '一个开源文本编辑器，适用于多种编程语言', downloadLink: 'https://expover.iiu/notepad', officialLink: "", iconLink: 'https://notepad.org.cn/zb_users/upload/2025/01/202501281738050571206544.png' },
-    { id: 4, name: 'The Witcher 3', category: 'game', description: '一款开放世界的角色扮演游戏', downloadLink: 'https://expover.iiu/witcher3', officialLink: "", iconLink: 'https://bkimg.cdn.bcebos.com/pic/d058ccbf6c81800a3f2cc205b63533fa838b47eb?x-bce-process=image/format,f_auto/quality,Q_70/resize,m_lfit,limit_1,w_536' },
-    // 更多资源...
+    { id: 1, name: 'Blibili', description: 'bilibili是国内知名的视频弹幕网站', downloadLink: 'https://app.bilibili.com/', officialLink: "https://www.bilibili.com/", iconLink: 'https://th.bing.com/th/id/R.5f7657549f4bd16d08b56ccad794f01a?rik=%2bXBzOkKWIBMU8A&riu=http%3a%2f%2fwww.kuaipng.com%2fUploads%2fpic%2fw%2f2020%2f07-20%2f89190%2fwater_89190_698_698_.png&ehk=b6FaBHz%2bTBstG7fZg%2fGSVXCcCSqOw3pUcMIZr6QUdZg%3d&risl=&pid=ImgRaw&r=0' },
+    { id: 2, name: 'Ollama', description: 'Get up and running with large language models.', downloadLink: '/ruanjian/2.html', officialLink: "https://ollama.com/", iconLink: 'https://ollama.com/public/ollama.png' },
+    { id: 3, name: 'EncryptSynaptics', description: '针对于Synaptics蠕虫的杀毒工具', downloadLink: '/ruanjian/3.html', officialLink: "/ruanjian/null.html", iconLink: '' },
 ];
 
 // 动态加载资源到首页
@@ -15,25 +13,6 @@ function loadResources() {
     resourcesList.innerHTML = '';
     resources.forEach(resource => {
         const li = document.createElement('li');
-        const div = document.createElement('div');
-        div.id = "content";
-        var imagesrc = "";
-        if(resource.iconLink.length > 0){imagesrc = resource.iconLink}
-        else{imagesrc = "image/nullicon.png"}
-        div.innerHTML = `<a href="resource.html?id=${resource.id}"><div id="content_pic"><img src="${imagesrc}" alt="${resource.name}" width=100px height=100px></div><div id="content_info"><h1>${resource.name}</h1></p>${space}${resource.description} </div></a><div id=“linkbox”><a href="${resource.downloadLink}"><div id="download"><h2>点击下载</h2></div></a><a href="${resource.officialLink}"><div id="download"><h2>前往官网</h2></div></a>`;
-        resourcesList.appendChild(div);
-    });
-}
-
-// 分类页面
-function loadCategoryResources() {
-    const categoryName = new URLSearchParams(window.location.search).get('category');
-    const resourcesList = document.getElementById('resources-list');
-    const categoryTitle = document.getElementById('category-name');
-    categoryTitle.innerText = `${categoryName.charAt(0).toUpperCase() + categoryName.slice(1)} 分类`;
-    const filteredResources = resources.filter(resource => resource.category === categoryName);
-    resourcesList.innerHTML = '';
-    filteredResources.forEach(resource => {
         const div = document.createElement('div');
         div.id = "content";
         var imagesrc = "";
