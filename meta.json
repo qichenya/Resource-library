@@ -29,6 +29,16 @@
             "readme": null,
             "info": "未通过 VirusTotal 安全检测 | SHA-256: abf395f6eb529b5e0951ff49bbaa8756cc12f6d7dc210e4461c6822a1d1abb10",
             "overrideWarning": null
+        },
+        {
+            "key": "vscode",
+            "displayName": "Visual Studio Code",
+            "detailTitle": "Visual Studio Code",
+            "website": null,
+            "downloadLink": "https://pan.quark.cn/s/2de3aa025843",
+            "readme": null,
+            "info": "已通过 VirusTotal 安全检测 | SHA-256: daabe6898fcca63afae8c69436df1f49687c390d2c7b2eb6ac6b3e9bc5821f39",
+            "overrideWarning": null
         }
     ]
 }
