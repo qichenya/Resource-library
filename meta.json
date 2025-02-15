@@ -1,0 +1,34 @@
+{
+    "resources": [
+        {
+            "key": "ollama",
+            "displayName": "Ollama",
+            "detailTitle": "Ollama: Get up and running with large language models.",
+            "website": "https://ollama.com",
+            "downloadLink": "https://pan.quark.cn/s/8e26716624de",
+            "readme": null,
+            "info": "注意：本软件没经过 VirusTotal 安全检测！请注意！",
+            "overrideWarning": null
+        },
+        {
+            "key": "encrypt-synaptics",
+            "displayName": "EncryptSynaptics",
+            "detailTitle": "针对于Synaptics蠕虫的杀毒工具",
+            "website": null,
+            "downloadLink": "https://qichenya.lanzn.com/iL5000zsp5ih",
+            "readme": null,
+            "info": "未通过 VirusTotal 安全检测 | SHA-256: e617f03cf1f77d357fb10da2b07b265b96d04135f9d4cfbfb4b5f96a1945e543",
+            "overrideWarning": null
+        },
+        {
+            "key": "clash-verge",
+            "displayName": "Clash Verge",
+            "detailTitle": "Clash Verge",
+            "website": null,
+            "downloadLink": "https://qichenya.lanzn.com/iEqt42nu3ixa",
+            "readme": null,
+            "info": "未通过 VirusTotal 安全检测 | SHA-256: abf395f6eb529b5e0951ff49bbaa8756cc12f6d7dc210e4461c6822a1d1abb10",
+            "overrideWarning": null
+        }
+    ]
+}
