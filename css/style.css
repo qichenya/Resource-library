@@ -14,7 +14,7 @@ header {
 }
 
 h1 {
-    font-size:larger;
+    font-size: larger;
 }
 
 header h1 {
@@ -33,13 +33,12 @@ main {
     padding: 20px;
 }
 
-
 /* 资源的样式awa */
 div#content_info h1 {
     font-size: large;
 }
 div#content {
-    float:left;
+    float: left;
     padding-left: 0px;
     margin-top: 30px;
     margin-left: 30px;
@@ -61,7 +60,7 @@ div#content_info {
     width: 195px;
     padding-right: 5px;
 }
-#content_info h1{
+#content_info h1 {
     text-align: center;
     font-size: larger;
     margin-top: 10px;
@@ -128,15 +127,15 @@ footer {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #4caf50;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
 }
 
-
 /* category的自适应 */
-.categories ul, .resources ul {
+.categories ul,
+.resources ul {
     list-style-type: none;
     padding: 0;
 }
@@ -146,8 +145,8 @@ footer {
         padding-right: 11%;
     }
 }
-@media (max-width: 500px){
-    div#content{
+@media (max-width: 500px) {
+    div#content {
         margin-left: 1%;
         margin-right: 1%;
     }
@@ -173,3 +172,4 @@ footer {
         padding-right: 6%;
     }
 }
+
