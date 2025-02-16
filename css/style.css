@@ -1,4 +1,4 @@
-/* 2025-02-15 by:4c01   zako qichen*/
+/* 2025-02-16 by:4c01   zako qichen*/
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,6 +7,8 @@ body {
 }
 
 header {
+    position: fixed;
+    width: 100%;
     background-color: #333;
     color: #fff;
     padding: 20px;
@@ -22,9 +24,10 @@ header h1 {
 }
 
 input[type="text"] {
-    margin-top: 30px;
-    padding: 5px;
+    height: 15px;
     width: 70%;
+    margin-top: 10px;
+    padding: 5px;
     font-size: 16px;
     border-radius: 30px;
     border: 10px solid #fff;
@@ -32,33 +35,67 @@ input[type="text"] {
 main {
     padding: 20px;
 }
-
+/* 资源区的样式qwq */
+div#text h1 {
+    margin-left: 20px;
+    font-size: xx-large;
+}
+div#text h2 {
+    margin-left: 30px;
+    font-size: x-large;
+}
+div#text h3 {
+    margin-left: 40px;
+    font-size: larger;
+}
+div#text text {
+    margin-left: 60px;
+    font-size: large;
+}
+div#main {
+    margin-left: 10px;
+}
+div#main {
+    height: 100%;
+    padding: 0;
+    padding-top: 120px;
+    padding-bottom: 70px;
+}
 /* 资源的样式awa */
 div#content_info h1 {
     font-size: large;
 }
 div#content {
+    overflow: auto;
     float: left;
-    padding-left: 0px;
-    margin-top: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
-    padding: 20px;
-    padding-bottom: 10px;
-    background-color: #eee;
-    border-radius: 30px;
-    border: 10px solid #eee;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
     height: 145px;
     width: 300px;
+
+    margin-top: 0px;
+    margin-bottom: 40px;
+    margin-left: 30px;
+    margin-right: 30px;
+
+    padding: 7px;
+    padding-bottom: 10px;
+
+    background-color: #eee;
+    border-radius: 30px;
+    border: 20px solid #eee;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
 }
 div#content_info {
     float: right;
     overflow-x: auto;
     overflow: hidden;
     height: 110px;
-    width: 195px;
+    width: 205px;
+
+    margin: 0px;
+    margin-left: 5px;
+
     padding-right: 5px;
+    padding-left: 0px;
 }
 #content_info h1 {
     text-align: center;
@@ -70,7 +107,7 @@ div#content_pic {
     overflow-x: auto;
     overflow: hidden;
     height: 100px;
-    width: 100px;
+    width: 80px;
 }
 div#linkbox {
     float: left;
@@ -138,6 +175,7 @@ footer {
 .resources ul {
     list-style-type: none;
     padding: 0;
+    overflow: auto;
 }
 @media (max-width: 650px) and (min-width: 500px) {
     .resources ul {
