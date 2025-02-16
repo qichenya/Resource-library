@@ -1,30 +1,29 @@
-// 静态资源数据
-
-const space = "";
+/* 2025-02-16 by:4c01   zako qichen*/
+const space = ""; //这玩意是description的前面空格,被七辰删了说不好看qwq
 let resources = [];
-
+// 动态资源数据
 async function getJSON() {
     const response = await fetch("meta.json");
     const resourcesinput= await response.json();
     resources = Array.from(resourcesinput.resources);
-    console.warn(resources);
 }
 // 动态加载资源到首页
 function loadResources() {
     const resourcesList = document.getElementById("resources-list");
     resourcesList.innerHTML = "";
     resources.forEach(resource => {
-        const li = document.createElement("li");
         const div = document.createElement("div");
         div.id = "content";
-        var imagesrc = "";
-        if (resource.iconLink.length > 0) {
-            imagesrc = resource.iconLink;
-        } else {
-            imagesrc = "image/nullicon.png";
-        }
-        if (!resource.website){resource.website = "/null.html"}
-        div.innerHTML = `<a href="resource.html?id=${resource.id}" target="_blank"><div id="content_pic"><img src="${imagesrc}" alt="${resource.displayName}" width=100px height=100px></div><div id="content_info"><h1>${resource.displayName}</h1></p>${space}${resource.detailTitle} </div></a><div id=“linkbox”><a href="${resource.downloadLink}" target="_blank"><div id="download"><h2>点击下载</h2></div></a><a href="${resource.website}" target="_blank"><div id="download"><h2>前往官网</h2></div></a>`;
+        // 无ico或无官网检测
+        if ((!resource.iconLink.length) || (resource.iconLink.length <= 3)) {resource.iconLink = "image/nullicon.png"}
+        if ((!resource.website) || (resource.website.length <= 3)){resource.website = "/null.html"}
+        if (resource.detailTitle.length >= 25){resource.detailTitle = resource.detailTitle.slice(0,24).split(' ',10).join(" ") + "..."}
+        
+        div.innerHTML = `<a href="resource.html?id=${resource.id}" target="_blank">
+        <div id="content_pic"><img src="${resource.iconLink}" alt="${resource.displayName}" width=80px height=80px></div>
+        <div id="content_info"><h1>${resource.displayName}</h1></p>${space}${resource.detailTitle} </div></a>
+        <div id=“linkbox”><a href="${resource.downloadLink}" target="_blank"><div id="download"><h2>点击下载</h2></div></a>
+        <a href="${resource.website}" target="_blank"><div id="download"><h2>前往官网</h2></div></a>`;
         resourcesList.appendChild(div);
     });
 }
@@ -45,13 +44,16 @@ function searchResources(categoryfilter) {
     filteredResources.forEach(resource => {
         const div = document.createElement("div");
         div.id = "content";
-        var imagesrc = "";
-        if (resource.iconLink.length > 0) {
-            imagesrc = resource.iconLink;
-        } else {
-            imagesrc = "image/nullicon.png";
-        }
-        div.innerHTML = `<a href="resource.html?id=${resource.id}" target="_blank"><div id="content_pic"><img src="${imagesrc}" alt="${resource.displayName}" width=100px height=100px></div><div id="content_info"><h1>${resource.displayName}</h1></p>${space}${resource.detailTitle} </div></a><div id=“linkbox”><a href="${resource.downloadLink}" target="_blank"><div id="download"><h2>点击下载</h2></div></a><a href="${resource.website}" target="_blank"><div id="download"><h2>前往官网</h2></div></a>`;
+        // 无ico或无官网检测
+        if ((!resource.iconLink.length <= 3) || (resource.iconLink.length <= 3)) {resource.iconLink = "image/nullicon.png"}
+        if ((!resource.website) || (resource.website.length <= 3)){resource.website = "/null.html"}
+        if (resource.detailTitle.length >= 25){resource.detailTitle = resource.detailTitle.slice(0,24).split(' ',10).join(" ") + "..."}
+
+        div.innerHTML = `<a href="resource.html?id=${resource.id}" target="_blank">
+        <div id="content_pic"><img src="${resource.iconLink}" alt="${resource.displayName}" width=80px height=80px></div>
+        <div id="content_info"><h1>${resource.displayName}</h1></p>${space}${resource.detailTitle} </div></a>
+        <div id=“linkbox”><a href="${resource.downloadLink}" target="_blank"><div id="download"><h2>点击下载</h2></div></a>
+        <a href="${resource.website}" target="_blank"><div id="download"><h2>前往官网</h2></div></a>`;
         resourcesList.appendChild(div);
     });
 }
