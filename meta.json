@@ -8,7 +8,8 @@
             "downloadLink": "https://pan.quark.cn/s/8e26716624de",
             "readme": null,
             "info": "注意：本软件没经过 VirusTotal 安全检测！请注意！",
-            "overrideWarning": null
+            "overrideWarning": null,
+            "iconLink" : "https://ollama.com/public/ollama.png"
         },
         {
             "key": "encrypt-synaptics",
@@ -18,7 +19,8 @@
             "downloadLink": "https://qichenya.lanzn.com/iL5000zsp5ih",
             "readme": null,
             "info": "未通过 VirusTotal 安全检测 | SHA-256: e617f03cf1f77d357fb10da2b07b265b96d04135f9d4cfbfb4b5f96a1945e543",
-            "overrideWarning": null
+            "overrideWarning": null,
+            "iconLink" : ""
         },
         {
             "key": "clash-verge",
@@ -28,7 +30,8 @@
             "downloadLink": "https://qichenya.lanzn.com/iEqt42nu3ixa",
             "readme": null,
             "info": "未通过 VirusTotal 安全检测 | SHA-256: abf395f6eb529b5e0951ff49bbaa8756cc12f6d7dc210e4461c6822a1d1abb10",
-            "overrideWarning": null
+            "overrideWarning": null,
+            "iconLink" : "https://clashcn.com/wp-content/uploads/2023/11/clashverge-300x300-1.png"
         },
         {
             "key": "vscode",
@@ -38,7 +41,8 @@
             "downloadLink": "https://pan.quark.cn/s/2de3aa025843",
             "readme": null,
             "info": "已通过 VirusTotal 安全检测 | SHA-256: daabe6898fcca63afae8c69436df1f49687c390d2c7b2eb6ac6b3e9bc5821f39",
-            "overrideWarning": null
+            "overrideWarning": null,
+            "iconLink" : "https://code.visualstudio.com/assets/images/code-stable.png"
         }
     ]
 }
