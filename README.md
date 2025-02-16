@@ -1,5 +1,5 @@
 # qichenya's Resource Library
-This is a website for listing resource and classing resource.  
+This is a website for listing software and sorting them.  
 The Basic usage is collect programs and softwares into a static website.  
   
 this is the feature that qichenya's Resource Library able to do:  
