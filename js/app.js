@@ -28,6 +28,31 @@ function loadResources() {
     });
 }
 
+function loadCategoryResources() {
+    const resourcesList = document.getElementById("resources-list");
+    var filteredResources, categoryName;
+    categoryName = new URLSearchParams(window.location.search).get("category");
+    let h2category = document.getElementById("category-name");
+    h2category.innerHTML = categoryName;
+    filteredResources = resources.filter(resource => resource.category == categoryName);
+    resourcesList.innerHTML = "";
+    filteredResources.forEach(resource => {
+        const div = document.createElement("div");
+        div.id = "content";
+        // 无ico或无官网检测
+        if ((!resource.iconLink.length) || (resource.iconLink.length <= 3)) {resource.iconLink = "image/nullicon.png"}
+        if ((!resource.website) || (resource.website.length <= 3)){resource.website = "/null.html"}
+        if (resource.detailTitle.length >= 25){resource.detailTitle = resource.detailTitle.slice(0,24).split(' ',10).join(" ") + "..."}
+        
+        div.innerHTML = `<a href="resource.html?id=${resource.id}" target="_blank">
+        <div id="content_pic"><img src="${resource.iconLink}" alt="${resource.displayName}" width=80px height=80px></div>
+        <div id="content_info"><h1>${resource.displayName}</h1></p>${space}${resource.detailTitle} </div></a>
+        <div id=“linkbox”><a href="${resource.downloadLink}" target="_blank"><div id="download"><h2>点击下载</h2></div></a>
+        <a href="${resource.website}" target="_blank"><div id="download"><h2>前往官网</h2></div></a>`;
+        resourcesList.appendChild(div);
+    });
+}
+
 // 搜索功能
 function searchResources(categoryfilter) {
     const searchQuery = document.getElementById("search").value.toLowerCase();
