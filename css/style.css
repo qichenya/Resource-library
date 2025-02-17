@@ -136,7 +136,7 @@ a {
     color: #333;
 }
 
-/* sidebar设置 */
+/* sidebar样式 */
 div#bar-wrap {
     position: fixed;
     top: 120px;
@@ -149,13 +149,24 @@ div#bar-wrap {
 }
 div#sidebar {
     float: left;
-    height: 100%;
+    height: 80%;
+    width: 0px;
     border:#ddd solid 1px;
     padding: 0px;
 }
 div#subbar {
+    overflow: auto;
     float: left;
-    height: 100%;
+    height: 80%;
+    width: 0px;
+    border: #ddd solid 1px;
+}
+div#subbar::-webkit-scrollbar{
+    display: none;
+}
+div.subbar-category {
+    height: 30px;
+    width: 80%;
 }
 button#open-subbar-button {
     width: 100%;
@@ -194,10 +205,8 @@ button#open-sidebar-button:hover {
     background-color: #fff;
     box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.3);
 }
-div#sidebar {
-    width: 0px;
-    height: 80%;
-}
+
+
 footer {
     background-color: #333;
     color: #fff;
