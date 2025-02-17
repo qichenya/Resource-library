@@ -299,6 +299,6 @@
             "mac" : false,
             "linux" : false,
             "android" : false
-        },
+        }
     ]
 }
