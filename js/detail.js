@@ -1,7 +1,7 @@
 // 根据 key 获取资源信息的函数
 async function getResourceByKey(key) {
     // 获取 meta.json 的数据
-    const response = await fetch("/meta.json");
+    const response = await fetch("/config/meta.json");
     const { resources } = await response.json();
 
     // 根据 key 查找匹配的资源
@@ -34,6 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log(resource.info);
                 if (resource.overrideWarning) {
                     elements.warning.innerText = resource.overrideWarning;
+                }else{
+                    elements.warning.style.borderRadius = "0px";
+                    elements.warning.style.padding = "0px";
                 }
             } else {
                 console.log("Resource not found.");

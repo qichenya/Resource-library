@@ -3,7 +3,7 @@ const space = ""; //这玩意是description的前面空格,被七辰删了说不
 let resources = [];
 // 动态资源数据
 async function getJSON() {
-    const response = await fetch("meta.json");
+    const response = await fetch("/config/meta.json");
     const resourcesinput = await response.json();
     resources = Array.from(resourcesinput.resources);
 }
