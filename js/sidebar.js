@@ -1,11 +1,12 @@
 /* 2025-02-18 by:4c01   zako qichen*/
 let sidebarConfig;
 let contents = [];
-const sidebarCategory = ["Android","Windows","Macos","Linux"];
+let sidebarCategory;
 // 加载sidebar config
 async function getSidebar() {
     const response = await fetch("/config/sidebar.json");
     sidebarConfig = await response.json();
+    sidebarCategory = Object.keys(sidebarConfig);
 }
 // 加载meta用于分类category
 async function getJSON() {
@@ -23,7 +24,7 @@ function openSidebar(){
     sidebarCategory.forEach(type => {
         const div = document.createElement("div");
         div.id = "platform";
-        div.innerHTML = `<button id="open-subbar-button" onclick="openSubbar(${type})">${type}</button>`
+        div.innerHTML = `<button id="open-subbar-button" onclick="openSubbar('${type}')">${type}</button>`
         sidebar.appendChild(div);
     });
     sidebarButton.innerHTML = "x";
@@ -40,3 +41,27 @@ function closeSidebar(){
     sidebarButton.innerHTML = "☰";
     sidebarButton.onclick = openSidebar;
 }
+function openSubbar(type){
+    const subbarContent = sidebarConfig[type];
+    const subbar = document.getElementById("subbar");
+    const emptydiv = document.createElement("div");
+    subbar.innerHTML = "";
+    emptydiv.style.height = "160px";
+    subbar.style.width = "200px";
+    subbarContent.forEach(category =>{
+        const div = document.createElement("div");
+        const filteredContents = contents.filter(content => (content.category == category.toLowerCase()) && (content[type.toLowerCase()] == true));
+        div.className = "subbar-category";
+        div.innerHTML = `<a href="/category.html?category=${category}"><h3>${category.toUpperCase()}:</h3></a>`
+        subbar.appendChild(div);
+        filteredContents.forEach(content =>{
+            const contentdiv = document.createElement("div");
+            contentdiv.className = "subbar-content";
+            contentdiv.innerHTML = `<a href="/detail.html?key=${content.key}">${content.displayName}</a>`
+            subbar.appendChild(contentdiv);
+        })
+    });
+    subbar.appendChild(emptydiv)
+}
+getJSON();
+getSidebar();
