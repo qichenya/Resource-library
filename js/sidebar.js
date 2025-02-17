@@ -35,8 +35,8 @@ function closeSidebar(){
     const subbar = document.getElementById("subbar");
     sidebar.style.width = "0px";
     sidebar.innerHTML = "";
-    sidebarButton.innerHTML = "☰";
-    sidebarButton.onclick = openSidebar;
     subbar.style.width = "0px";
     subbar.innerHTML = "";
+    sidebarButton.innerHTML = "☰";
+    sidebarButton.onclick = openSidebar;
 }
