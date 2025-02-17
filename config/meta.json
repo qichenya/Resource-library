@@ -292,7 +292,7 @@
             "website": null,
             "downloadLink": "https://github.com/zzzgydi/clash-verge/releases/tag/v1.3.8",
             "readme": null,
-            "overrideWarning": null,
+            "overrideWarning": "免责声明：本软件来自网络，仅供学习交流使用，请于下载后24小时内删除。如需商业使用请购买正版！",
             "iconLink" : "https://clashcn.com/wp-content/uploads/2023/11/clashverge-300x300-1.png",
             "category" : "proxy",
             "windows" : true,
