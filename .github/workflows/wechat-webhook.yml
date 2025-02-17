@@ -1,0 +1,21 @@
+name: 企业微信 Webhook 推送
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify_wechat:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 发送通知到企业微信
+        run: |
+          curl -X POST "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=0e32bb4f-e98a-4144-899d-4b011be0edb6" \
+          -H "Content-Type: application/json" \
+          -d '{
+            "msgtype": "markdown",
+            "markdown": {
+              "content": "📢 **GitHub 代码更新通知**\n\n📌 仓库：[${{ github.repository }}](${{ github.server_url }}/${{ github.repository }})\n🔧 提交者：${{ github.actor }}\n📝 提交信息：${{ github.event.head_commit.message }}\n🔗 [查看提交详情](${{ github.event.head_commit.url }})"
+            }
+          }'
