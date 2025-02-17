@@ -1,38 +1,35 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="shortcut icon" href="icon.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>七辰资源库</title>
-        <link rel="stylesheet" href="css/style.css" />
-    </head>
-    <body>
-        <header>
-            <h1>七辰资源库</h1>
-            <input type="text" id="search" placeholder="搜索资源..." oninput="searchResources('')" />
-        </header>
 
-        <main>
-            <section class="resources">
-                <div id="main">
-                    <div id="text">
-                        <h1>Announcement</h1>
-                        <text>虽然这里并没有新公告</text>
-                    </div>
-                    <h2>最近上传</h2>
-                    <ul id="resources-list">
-                        <!-- 资源列表将动态加载 -->
-                    </ul>
-                </div>
-            </section>
-        </main>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>七辰资源库</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
 
-        <footer>
-            <p>&copy; 2025 七辰资源库. All Rights Reserved.</p>
-        </footer>
+<body>
+    <header>
+        <h1>七辰资源库</h1>
+        <input type="text" id="search" placeholder="搜索资源..." oninput="searchResources('')" />
+    </header>
 
-        <script src="js/app.js"></script>
-    </body>
+    <main>
+        <section class="resources">
+            <div id="main">
+                <ul id="resources-list">
+                    <!-- 资源列表将动态加载 -->
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 七辰资源库. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+
 </html>
-

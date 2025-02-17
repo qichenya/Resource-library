@@ -28,9 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log("Resource metadata:", resource);
 
                 // 替换元素内容
-                elements.title.innerText = resource.detailTitle;
+                elements.title.innerText = resource.displayName;
                 elements.downloadBtn.href = resource.downloadLink;
-                elements.info.innerText = resource.info;
+                elements.info.innerText = resource.detailTitle;
                 console.log(resource.info);
                 if (resource.overrideWarning) {
                     elements.warning.innerText = resource.overrideWarning;

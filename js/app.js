@@ -4,7 +4,7 @@ let resources = [];
 // 动态资源数据
 async function getJSON() {
     const response = await fetch("meta.json");
-    const resourcesinput= await response.json();
+    const resourcesinput = await response.json();
     resources = Array.from(resourcesinput.resources);
 }
 // 动态加载资源到首页
@@ -15,15 +15,15 @@ function loadResources() {
         const div = document.createElement("div");
         div.id = "content";
         // 无ico或无官网检测
-        if ((!resource.iconLink.length) || (resource.iconLink.length <= 3)) {resource.iconLink = "image/nullicon.png"}
-        if ((!resource.website) || (resource.website.length <= 3)){resource.website = "/null.html"}
-        if (resource.detailTitle.length >= 25){resource.detailTitle = resource.detailTitle.slice(0,24).split(' ',10).join(" ") + "..."}
-        
-        div.innerHTML = `<a href="resource.html?id=${resource.id}" target="_blank">
+        if ((!resource.iconLink.length) || (resource.iconLink.length <= 3)) { resource.iconLink = "image/nullicon.png" }
+        if ((!resource.website) || (resource.website.length <= 3)) { resource.website = "/null.html" }
+        if (resource.detailTitle.length >= 25) { resource.detailTitle = resource.detailTitle.slice(0, 24).split(' ', 10).join(" ") + "..." }
+
+        div.innerHTML = `<a href="detail.html?key=${resource.key}" target="_blank">
         <div id="content_pic"><img src="${resource.iconLink}" alt="${resource.displayName}" width=80px height=80px></div>
         <div id="content_info"><h1>${resource.displayName}</h1></p>${space}${resource.detailTitle} </div></a>
         <div id=“linkbox”><a href="${resource.downloadLink}" target="_blank"><div id="download"><h2>点击下载</h2></div></a>
-        <a href="${resource.website}" target="_blank"><div id="download"><h2>前往官网</h2></div></a>`;
+<a href="${resource.website}" target="_blank"><div id="download"><h2>前往官网</h2></div></a>`;
         resourcesList.appendChild(div);
     });
 }
@@ -40,15 +40,15 @@ function loadCategoryResources() {
         const div = document.createElement("div");
         div.id = "content";
         // 无ico或无官网检测
-        if ((!resource.iconLink.length) || (resource.iconLink.length <= 3)) {resource.iconLink = "image/nullicon.png"}
-        if ((!resource.website) || (resource.website.length <= 3)){resource.website = "/null.html"}
-        if (resource.detailTitle.length >= 25){resource.detailTitle = resource.detailTitle.slice(0,24).split(' ',10).join(" ") + "..."}
-        
-        div.innerHTML = `<a href="resource.html?id=${resource.id}" target="_blank">
-        <div id="content_pic"><img src="${resource.iconLink}" alt="${resource.displayName}" width=80px height=80px></div>
-        <div id="content_info"><h1>${resource.displayName}</h1></p>${space}${resource.detailTitle} </div></a>
-        <div id=“linkbox”><a href="${resource.downloadLink}" target="_blank"><div id="download"><h2>点击下载</h2></div></a>
-        <a href="${resource.website}" target="_blank"><div id="download"><h2>前往官网</h2></div></a>`;
+        if ((!resource.iconLink.length) || (resource.iconLink.length <= 3)) { resource.iconLink = "image/nullicon.png" }
+        if ((!resource.website) || (resource.website.length <= 3)) { resource.website = "/null.html" }
+        if (resource.detailTitle.length >= 25) { resource.detailTitle = resource.detailTitle.slice(0, 24).split(' ', 10).join(" ") + "..." }
+
+        div.innerHTML = `<a href="detail.html?key=${resource.key}" target="_blank">
+       <div id="content_pic"><img src="${resource.iconLink}" alt="${resource.displayName}" width=80px height=80px></div>
+       <div id="content_info"><h1>${resource.displayName}</h1></p>${space}${resource.detailTitle} </div></a>
+       <div id=“linkbox”><a href="${resource.downloadLink}" target="_blank"><div id="download"><h2>点击下载</h2></div></a>
+       <a href="${resource.website}" target="_blank"><div id="download"><h2>前往官网</h2></div></a>`;
         resourcesList.appendChild(div);
     });
 }
@@ -70,15 +70,15 @@ function searchResources(categoryfilter) {
         const div = document.createElement("div");
         div.id = "content";
         // 无ico或无官网检测
-        if ((!resource.iconLink.length <= 3) || (resource.iconLink.length <= 3)) {resource.iconLink = "image/nullicon.png"}
-        if ((!resource.website) || (resource.website.length <= 3)){resource.website = "/null.html"}
-        if (resource.detailTitle.length >= 25){resource.detailTitle = resource.detailTitle.slice(0,24).split(' ',10).join(" ") + "..."}
+        if ((!resource.iconLink.length <= 3) || (resource.iconLink.length <= 3)) { resource.iconLink = "image/nullicon.png" }
+        if ((!resource.website) || (resource.website.length <= 3)) { resource.website = "/null.html" }
+        if (resource.detailTitle.length >= 25) { resource.detailTitle = resource.detailTitle.slice(0, 24).split(' ', 10).join(" ") + "..." }
 
-        div.innerHTML = `<a href="resource.html?id=${resource.id}" target="_blank">
-        <div id="content_pic"><img src="${resource.iconLink}" alt="${resource.displayName}" width=80px height=80px></div>
-        <div id="content_info"><h1>${resource.displayName}</h1></p>${space}${resource.detailTitle} </div></a>
-        <div id=“linkbox”><a href="${resource.downloadLink}" target="_blank"><div id="download"><h2>点击下载</h2></div></a>
-        <a href="${resource.website}" target="_blank"><div id="download"><h2>前往官网</h2></div></a>`;
+        div.innerHTML = `<a href="detail.html?key=${resource.key}" target="_blank">
+      <div id="content_pic"><img src="${resource.iconLink}" alt="${resource.displayName}" width=80px height=80px></div>
+      <div id="content_info"><h1>${resource.displayName}</h1></p>${space}${resource.detailTitle} </div></a>
+      <div id=“linkbox”><a href="${resource.downloadLink}" target="_blank"><div id="download"><h2>点击下载</h2></div></a>
+      <a href="${resource.website}" target="_blank"><div id="download"><h2>前往官网</h2></div></a>`;
         resourcesList.appendChild(div);
     });
 }
