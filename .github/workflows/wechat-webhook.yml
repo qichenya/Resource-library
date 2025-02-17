@@ -16,9 +16,8 @@ jobs:
           -d '{
             "msgtype": "markdown",
             "markdown": {
-              "content": " **GitHub 代码更新通知**\n\n
-              > 仓库持有人：[${{ github.repository }}]\n
-              > 仓库: (${{ github.server_url }}/${{ github.repository }})\n
+              "content": "**GitHub 代码更新通知**\n\n
+              > 仓库：[${{ github.repository }}]\n
               > 提交者：${{ github.actor }}\n
               > 提交信息：${{ github.event.head_commit.message }}"
             }
