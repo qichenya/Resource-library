@@ -88,7 +88,7 @@ function openSubbar(type){
         );
 
         // 创建分类标题链接（带URL参数）
-        div.innerHTML = `<a href="/category.html?category=${category}">
+        div.innerHTML = `<a href="/category.html?category=${category}&amp;platform=${type}">
             <h3>${category.toUpperCase()}:</h3></a>`
         subbar.appendChild(div);
 
