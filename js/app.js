@@ -38,9 +38,9 @@ function loadCategoryResources() {
     platformName = new URLSearchParams(window.location.search).get("platform");
     let h2category = document.getElementById("category-name");
     h2category.innerHTML = categoryName;
-    filteredResources = resources.filter(resource => resource.category == categoryName.toLowerCase);
+    filteredResources = resources.filter(resource => resource.category == categoryName.toLowerCase());
     if (platformName){
-        filteredResources = filteredResources.filter(resource => resource[platformName].toLowerCase == true);
+        filteredResources = filteredResources.filter(resource => resource[platformName].toLowerCase() == true);
         h2category.innerHTML = "在 " + platformName + " 上可用的 " + categoryName + ":";
     }
     resourcesList.innerHTML = "";
