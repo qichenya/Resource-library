@@ -1,12 +1,14 @@
 /* 2025-02-16 by:4c01   zako qichen*/
-const space = ""; //这玩意是description的前面空格,被七辰删了说不好看qwq
+const space = ""; // 这玩意是description的前面空格,被七辰删了说不好看qwq
 let resources = [];
-// 动态资源数据
+
+// 动态获取JSON数据
 async function getJSON() {
     const response = await fetch("/config/meta.json");
     const resourcesinput = await response.json();
     resources = Array.from(resourcesinput.resources);
 }
+
 // 动态加载资源到首页
 function loadResources() {
     const resourcesList = document.getElementById("resources-list");
@@ -28,6 +30,7 @@ function loadResources() {
     });
 }
 
+// 加载分类资源
 function loadCategoryResources() {
     const resourcesList = document.getElementById("resources-list");
     var filteredResources, categoryName;
