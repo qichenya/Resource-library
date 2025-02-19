@@ -1,86 +1,16 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8" />
-    <link rel="shortcut icon" href="icon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>七辰资源库</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <style>
-        /* Cookie 弹窗基础样式 */
-        #cookie-popup {
-            position: fixed;
-            bottom: -150px; /* 初始位置 */
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 400px;
-            background: linear-gradient(135deg, #6b9dfc, #ff88dc); /* 蓝粉渐变 */
-            color: #fff;
-            text-align: center;
-            padding: 15px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.6s ease-in-out;
-        }
-
-        /* 显示弹窗 */
-        #cookie-popup.show {
-            bottom: 20px; /* 滑入 */
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* 隐藏弹窗 */
-        #cookie-popup.hide {
-            bottom: -150px; /* 滑出 */
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        /* 按钮样式 */
-        .cookie-buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-            gap: 10px; /* 增加按钮间距 */
-        }
-
-        .cookie-buttons button {
-            flex: 1;
-            max-width: 120px;
-            padding: 10px 14px;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            border: none;
-            border-radius: 6px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        /* 蓝色按钮 */
-        .cookie-buttons .accept {
-            background: #468ef9;
-            color: #fff;
-        }
-
-        /* 粉色按钮 */
-        .cookie-buttons .decline {
-            background: #ff6bb5;
-            color: #fff;
-        }
-
-        /* 按钮 hover 动画 */
-        .cookie-buttons button:hover {
-            transform: scale(1.1);
-        }
-    </style>
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="shortcut icon" href="icon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>七辰资源库</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
 <body>
     <header>
+<!--        <button id="open-sidebar-button" onclick="openSidebar()">☰</button>  -->
+<!--        做的太烂惹在改改在应用qwq                                -4c的宠物七辰喵 -->
         <h1>七辰资源库</h1>
         <input type="text" id="search" placeholder="搜索资源..." oninput="searchResources('')" />
     </header>
@@ -93,7 +23,8 @@
     <main>
         <section class="resources">
             <div id="main">
-                <div id="text"></div>
+                <div id="text">
+                </div>
                 <ul id="resources-list">
                     <!-- 资源列表将动态加载 -->
                 </ul>
@@ -105,77 +36,7 @@
         <p>&copy; 2025 七辰资源库. All Rights Reserved.</p>
     </footer>
 
-    <!-- Cookie 弹窗 -->
-    <div id="cookie-popup">
-        <p>我们使用 cookies 以确保您在我们网站上的最佳体验。</p>
-        <div class="cookie-buttons">
-            <button class="accept" id="accept-cookies">同意</button>
-            <button class="decline" id="decline-cookies">拒绝</button>
-        </div>
-    </div>
-
     <script src="js/app.js"></script>
     <script src="js/sidebar.js"></script>
-    <script>
-        // 设置 Cookie 的函数
-        function setCookie(name, value, days) {
-            let expires = "";
-            if (days) {
-                const date = new Date();
-                date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-                expires = "; expires=" + date.toUTCString();
-            }
-            document.cookie = name + "=" + (value || "") + expires + "; path=/";
-        }
-
-        // 获取 Cookie 的函数
-        function getCookie(name) {
-            const nameEQ = name + "=";
-            const ca = document.cookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i].trim();
-                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-            }
-            return null;
-        }
-
-        // 页面加载后检测 Cookie 状态
-        document.addEventListener("DOMContentLoaded", function () {
-            const cookieAccepted = getCookie("cookieAccepted");
-            const popup = document.getElementById("cookie-popup");
-
-            console.log("Cookie 状态:", cookieAccepted);
-
-            if (!cookieAccepted) {
-                setTimeout(() => {
-                    popup.classList.add("show");
-                    console.log("弹窗显示！");
-                }, 800);
-            }
-
-            document.getElementById("accept-cookies").addEventListener("click", function () {
-                setCookie("cookieAccepted", "true", 365);
-                popup.classList.add("hide");
-                console.log("用户同意 Cookie");
-
-                setTimeout(() => {
-                    popup.style.display = "none";
-                }, 600);
-            });
-
-            document.getElementById("decline-cookies").addEventListener("click", function () {
-                console.log("用户拒绝 Cookie，尝试关闭网页");
-
-                setTimeout(() => {
-                    // 检测是否是 window.open 打开的
-                    if (window.opener) {
-                        window.close(); // 关闭当前窗口
-                    } else {
-                        window.location.href = "如果不同意我们的使用许可那就不要使用";
-                    }
-                }, 600);
-            });
-        });
-    </script>
 </body>
 </html>
