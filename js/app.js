@@ -95,7 +95,7 @@ getJSON().then(() => {
     // 页面加载时调用相应的函数
     if (document.getElementById("resources-list")) {
         if (document.getElementById("category-name")) {
-            document.title = (new URLSearchParams(window.location.search).get("category") + " - 七辰资源库");
+            document.title = (new URLSearchParams(window.location.search).get("category") + " - 4C的七辰资源库");
             loadCategoryResources();
         } else {
             loadResources();

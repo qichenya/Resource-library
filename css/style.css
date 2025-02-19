@@ -9,7 +9,8 @@ body {
 header {
     position: fixed;
     width: 100%;
-    background-color: #333;
+    background-color: #09f;
+    background: linear-gradient(to right,#03f 1%,10%,#09f 40%, pink);
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -82,7 +83,12 @@ div#content {
     background-color: #eee;
     border-radius: 30px;
     border: 20px solid #eee;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+}
+div#content:hover {
+    background-color: #ddd;
+    border-color: #ddd;
+    transition: background border 0.5s;
 }
 div#content_info {
     float: right;
@@ -123,6 +129,12 @@ div#download {
     border-radius: 10px;
     border: 0px solid #eee;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    background-color: #eee;
+}
+div#download:hover {
+    background-color: #ddd;
+    border-color: #ddd;
+    transition: background border 0.5s;
 }
 div#download h2 {
     margin: 0px;
@@ -140,26 +152,27 @@ a {
 div#bar-wrap {
     position: fixed;
     top: 120px;
-    background-color: #eee;
-    overflow: auto;
-    height: 100%;
-    border:#ddd solid 1px;
-    box-shadow: 1px 1px 10px rgba(0,0,0, 0.2);
+    background-color: #fff;
+    overflow: hidden;
+    height: 90%;
+    box-shadow: 5px 5px 10px rgba(100,200,255, 0.8);
     border-left: 0px;
 }
 div#sidebar {
     float: left;
-    height: 80%;
+    height: 87%;
     width: 0px;
-    border:#ddd solid 1px;
+    border-right: #09f solid 3px;
+    border-bottom: #09f solid 100px;
     padding: 0px;
 }
 div#subbar {
     overflow: auto;
     float: left;
-    height: 80%;
+    height: 87%;
     width: 0px;
-    border: #ddd solid 1px;
+    border-right: #09f solid 3px;
+    border-bottom: #09f solid 100px;
 }
 div#subbar::-webkit-scrollbar{
     display: none;
@@ -167,21 +180,29 @@ div#subbar::-webkit-scrollbar{
 div.subbar-category {
     height: 30px;
     width: 80%;
+    margin-left: 4px;
+}
+div.subbar-content {
+    font-size: 17px;
+    height: 23px;
+    margin: 0;
+    margin-left: 8px;
 }
 button#open-subbar-button {
     width: 100%;
-    border: #ddd solid 0px;
-    border-bottom: #333 solid 1px;
+    border: #fff solid 0px;
+    border-bottom: #09f solid 1.5px;
     color: #333;
-    background-color: #eee;
+    background-color: #fff;
     text-align: left;
     font-size: large;
     padding-top: 10px;
     padding-left: 10px;
 }
 button#open-subbar-button:hover {
-    background-color: #ddd;
-    border-left: #ccc solid 10px;
+    background-color: #eee;
+    border-left: #0ef solid 10px;
+    transition: border 0.3s;
 }
 /* sidebar button */
 button#open-sidebar-button {
@@ -208,11 +229,11 @@ button#open-sidebar-button:hover {
 
 
 footer {
-    background-color: #333;
+    background-color: #09f;
+    background: linear-gradient(to right,#03f 1%,5%,#09f 40%,90%, pink);
     color: #fff;
     text-align: center;
     padding: 10px;
-    position: fixed;
     width: 100%;
     bottom: 0;
 }
@@ -246,6 +267,7 @@ footer {
 .resources ul {
     list-style-type: none;
     padding: 0;
+    padding-top: 20px;
     overflow: auto;
 }
 @media (max-width: 650px) and (min-width: 500px) {
