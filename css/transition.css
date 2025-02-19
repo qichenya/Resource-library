@@ -34,7 +34,7 @@ h1 {
 
 .download-btn {
     display: inline-block;
-    background: #27ae60;
+    background: #3cf;
     color: white;
     padding: 15px 40px;
     margin: 20px 0;
@@ -46,7 +46,7 @@ h1 {
 }
 
 .download-btn:hover {
-    background: #219a52;
+    background: #39f;
 }
 
 .info-box {

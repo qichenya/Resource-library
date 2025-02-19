@@ -24,7 +24,7 @@ function openSidebar(){
     
     // 创建标题元素
     const title = document.createElement("h2");
-    title.innerHTML = "Platform:";
+    title.innerHTML = "&nbsp可用平台:";
     
     // 设置侧边栏样式
     sidebar.style.width = "150px";
@@ -89,7 +89,7 @@ function openSubbar(type){
 
         // 创建分类标题链接（带URL参数）
         div.innerHTML = `<a href="/category.html?category=${category}&amp;platform=${type}">
-            <h3>${category.toUpperCase()}:</h3></a>`
+            <h2>${category}:</h2></a>`
         subbar.appendChild(div);
 
         // 生成具体内容项链接
