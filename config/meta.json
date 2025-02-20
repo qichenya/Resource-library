@@ -11,7 +11,6 @@
             "iconLink": "https://ollama.com/public/ollama.png",
             "category": "Tool",
             "windows": true,
-            "ios": true,
             "android": true
         },
         {
@@ -25,7 +24,6 @@
             "iconLink": "",
             "category": "defender",
             "windows": true,
-            "ios": true,
             "android": true
         },
         {
@@ -39,7 +37,6 @@
             "iconLink": "https://code.visualstudio.com/assets/images/code-stable.png",
             "category": "Tool",
             "windows": true,
-            "ios": true,
             "android": false
         },
         {
@@ -53,7 +50,6 @@
             "iconLink": "https://www.todesk.com/dist/img/d6947e1.svg",
             "category": "remote",
             "windows": true,
-            "ios": true,
             "android": true
         },
         {
@@ -67,7 +63,6 @@
             "iconLink": "https://www.xterminal.cn/favicon.png",
             "category": "remote",
             "windows": true,
-            "ios": true,
             "android": false
         },
         {
@@ -81,7 +76,6 @@
             "iconLink": "https://pic1.afdiancdn.com/user/df2dfad2960911e89c5252540025c377/common/c9e06a9d37c2676b2eac22c8c1523e72_w1182_h300_s165.png?imageView2/1/w/120/h/120",
             "category": "game",
             "windows": true,
-            "ios": false,
             "android": false
         },
         {
@@ -109,7 +103,6 @@
             "iconLink": "data:image/webp;base64,UklGRrYEAABXRUJQVlA4WAoAAAAQAAAAfwAAdAAAQUxQSEoEAAABoFRbT55ti4RIQAISkIAEJCABCZWAhEqIhEpAQobf7Bo8LeHvfr9pREwAbeyyKP62OzH93ijor+HHeIG98g/hC0M1/4ykGP2En+AFMysfjy9M1ny4pJj/hIN5wZqVD8UXltV8pKiwP1cOIZTaTMATjuMEZi2Ovn1VC3DxUbjArIWp31UTNB0kNpirI3sQCyD+EE5glkBjU7MAFx+AC8wt0XAuaoGm7WKDVQvTTFctgPitnMBcHc0OYgEu3oYLzBLImp2NKDULNG0SG6wtkf3OI4iLGgDxGziBVQuT2SU8cQSRqxbg4sW4wFwd2f0NQCuPIApigaalYoNVAg1ulcanZgDEL+ME1pao28eeGicQFzUAF69RYNXC1BsEXYFnELlqgaYFQoO1OuoNAjRaOYgBED/J3bBKoF6+ACAvRZSaASg8oyiMLVF3VPx1ixEXNaDFYe6BUQtT94XXh9Z31QDcPMYrjNVRNz94LxsQBTHg4RFe0S+B+r3iM2xBlFofHrY5RXdLZPSKb9qVi3bhsT3o1cJk9IpvWYm5i8jVLlyWjF5xZPWKzmulGA1EofXA97H2VDKzoresVKuJ+OmRvozOSmZ+0B3WCZfqFSzETwdCV+u4yV6xB2cBJLOFuHXUHo9vZVuEkTv8JCK6bxoZOrQndyQys1qo8+ZpKQ2h+gXfcX81+su5p2Ic0jTnxriO3CFf10uSjoBxEfe04c9X6Whf4U8QJPcho8LVAOidtihftQPfRMRVAYh/iRjFsTbond0W4UsGNHq9lOldBoQXIvK4aFOeIW+h0nvADNK4Cy1A8aOOyB2VDvbJGFk6uM/lI6Uh0mHM95HuITqG04PsDoSxfoSrDdA7HCcMyiOIqDZaeJ0y6B4UrxPJIPAY9ifSUWnMXN4Go5/l/LVLGAa/Wn6OU1cTuE3SOLi1GEiblAl1rQQInwZ+GU5V8VeyP4uMSwYv6GzpKMijuBmIONYG4M6Oeo+gblCCtxCRByoZlwlT8IyJgjvYSBFPhGtAxqsmUwVv4iYh2YijQCLZk9AmNAvRRpTgaSDnbZ5Z6gew0pLr1FlQb6N0ljQNmmyLruPmAfls1BbAzUe7VkALJ/NLABefi9oa0HSg6y0vArR0nBZeWFcBWuYpjlfzuF6orAPgTjzIJdHlMp431pUASAlscPF6ABRaK14K3MkREZXFXkXK6yWC98ZLZXzfjojbBiMTLUUcqwJ3dvQ3nkBoMSLKeOj73k/dBh5XB7ftEm1ALXaQ363SFpW6014P78F9dO2kTHuY6z7q6QxUd1FPp6C6h3paRaSUUmLwEyjv8DANDiGVUqpcHWtGXa4yHdY9a2mmRcvS8t9C7Sqr4n8/9covobE/KvQ+vyR04n9/GHqwMJKGHozGhoEHC/Y/+On/BmWqHKFM/TO3HIG2/kU4/r9Pmd6mlenz5ss0Ov5PSyIiOk3++kMVrBsOlWRdvxJWUDggRgAAAHAGAJ0BKoAAdQA+kUihTKWkIyIgiACwEglpbuF0kABPbYi8QVHPbEXiCo57Yi8QVHPbEXiCo57Yi8QTYAD+/0X4AAAAAAA=",
             "category": "game",
             "windows": true,
-            "ios": true,
             "android": false
         },
         {
@@ -123,7 +116,6 @@
             "iconLink": "https://obsproject.com/assets/images/new_icon_small-r.png",
             "category": "video",
             "windows": true,
-            "ios": true,
             "android": false
         },
         {
@@ -137,7 +129,6 @@
             "iconLink": "https://y.qq.com/favicon.ico?max_age=2592000",
             "category": "music",
             "windows": true,
-            "ios": true,
             "android": true
         },
         {
@@ -151,7 +142,6 @@
             "iconLink": "https://winscp-static-746341.c.cdn77.org/assets/images/logos/logo.png?v=7038",
             "category": "remote",
             "windows": true,
-            "ios": false,
             "android": false
         },
         {
@@ -165,7 +155,6 @@
             "iconLink": "https://www.blockbench.net/favicon.svg",
             "category": "game",
             "windows": true,
-            "ios": true,
             "android": false
         },
         {
@@ -179,7 +168,6 @@
             "iconLink": "https://th.bing.com/th?id=ODLS.6569a391-5ce2-4907-85b6-0dbebaea51e3&w=32&h=32&qlt=90&pcl=fffffc&r=0&o=6&pid=1.2",
             "category": "game",
             "windows": true,
-            "ios": true,
             "android": true
         },
         {
@@ -193,7 +181,6 @@
             "iconLink": "https://www.bandisoft.com/img.front/bandizip_logo.png",
             "category": "tool",
             "windows": true,
-            "ios": true,
             "android": false
         },
         {
@@ -207,7 +194,6 @@
             "iconLink": "https://www.image-line.com/wp-content/themes/intracto/build/images/fl-header-logo.png",
             "category": "music",
             "windows": true,
-            "ios": true,
             "android": false
         },
         {
@@ -221,7 +207,6 @@
             "iconLink": "https://www.gy328.com/wp-content/uploads/2024/09/1726650579-WinstepNexus.jpg",
             "category": "tool",
             "windows": true,
-            "ios": false,
             "android": false
         },
         {
@@ -235,7 +220,6 @@
             "iconLink": "https://files.community/branding/logo-light.svg",
             "category": "tool",
             "windows": true,
-            "ios": false,
             "android": false
         },
         {
@@ -249,7 +233,6 @@
             "iconLink": "https://lf3-s.vlabstatic.com/obj/vilab-static/ies/ulike/web/resource/fe_official/assets/imgs/lv/favicon.ico",
             "category": "video",
             "windows": true,
-            "ios": true,
             "android": true
         },
         {
@@ -263,7 +246,6 @@
             "iconLink": "https://soft.uesou.cn/uploadfile/2020/1217/20201217042222563.jpeg",
             "category": "Tool",
             "windows": false,
-            "ios": false,
             "android": false
         },
         {
@@ -277,7 +259,6 @@
             "iconLink": "https://clashcn.com/wp-content/uploads/2023/11/clashverge-300x300-1.png",
             "category": "proxy",
             "windows": true,
-            "ios": false,
             "android": false
         }
     ]
