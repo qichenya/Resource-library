@@ -1,4 +1,3 @@
-/* 2025-02-16 by:4c01   zako qichen*/
 const space = ""; // 这玩意是description的前面空格,被七辰删了说不好看qwq
 let resources = [];
 
