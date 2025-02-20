@@ -1,6 +1,5 @@
 {
-    "Android":["Game","Coding","Video","AI","Remote","MC","Music","Tool","Proxy"],
-    "Windows":["Game","Coding","Video","AI","Remote","MC","Music","Tool","Proxy"],
-    "ios":["Game","Coding","Video","AI","Remote","MC","Music","Tool","Proxy"],
-    "Linux":["Game","Coding","Video","AI","Remote","MC","Music","Tool","Proxy"]
+    "Android":["Game","Video","Remote","Music","Tool","Proxy"],
+    "Windows":["Game","Video","Remote","Music","Tool","Proxy"],
+    "ios":["Game","Video","Remote","Music","Tool","Proxy"]
 }

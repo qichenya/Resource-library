@@ -208,25 +208,22 @@ button#open-subbar-button:hover {
 button#open-sidebar-button {
     width: 50px;
     height: 50px;
-    padding: 5px;
-    padding-top: 0px;
+    padding: 0px 5px 5px 5px;
     border-radius: 10px;
-    border: #eee solid;
+    border: 1px solid #eee;
 
     color: #333;
     background-color: #eee;
-    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.3);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
     font-size: xx-large;
-    float: left;
     position: fixed;
     top: 45px;
     left: 30px;
 }
 button#open-sidebar-button:hover {
     background-color: #fff;
-    box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.3);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
 }
-
 
 footer {
     background-color: #09f;
