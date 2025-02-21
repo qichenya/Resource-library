@@ -1,11 +1,19 @@
-# qichenya's Resource Library
-This is a website for listing software and sorting them.  
-The Basic usage is collect programs and softwares into a static website.  
-  
-this is the feature that qichenya's Resource Library able to do:  
-## collect software link
-collect the website or the link address and anything you want, just like the feature: "add it to your favorite"
-## searching
-search the specified of infomation, or search by name to find out what you collected.
-## add discription
-if you forgot the specified software's usage or why you save it in your Library,you can easily findout it in the discription
+# 🌐 七辰下载站
+
+**一个开源、安全、高效的资源下载平台**
+
+## 📖 简介
+
+七辰下载站是一个完全开源的资源下载平台，致力于提供：
+- ✅ 安全可靠的软件
+- 🔍 便捷的资源检索系统
+- 🛠️ 开发者的开源架构
+
+## ✨ 主要功能
+
+- **多资源分类**  
+  游戏/工具等分类管理
+- **用户反馈**  
+  我们会给每个用户的问题进行整合修复
+- **多平台适配**  
+  兼容 PC/移动端访问
