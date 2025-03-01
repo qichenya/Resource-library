@@ -20,6 +20,17 @@
     <div class="sk-cube sk-cube-8"></div>
     <div class="sk-cube sk-cube-9"></div>
   </div>
+<!-- 在原有的 script 标签后添加以下内联脚本 -->
+<script>
+// 当页面完全加载后隐藏加载动画
+window.addEventListener('load', function() {
+    var loadingElement = document.querySelector('.sk-cube-grid');
+    if (loadingElement) {
+        loadingElement.style.display = 'none';
+    }
+});
+</script>
+
     <header>
         <button id="open-sidebar-button" onclick="openSidebar()">☰</button> 
         <h1>七辰资源库</h1>
