@@ -1,55 +1,67 @@
 <!doctype html>
 <html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>七辰资源库</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
 <body>
-<!-- loading.html -->
-<div class="sk-cube-grid">
-    <div class="sk-cube sk-cube-1"></div>
-    <div class="sk-cube sk-cube-2"></div>
-    <div class="sk-cube sk-cube-3"></div>
-    <div class="sk-cube sk-cube-4"></div>
-    <div class="sk-cube sk-cube-5"></div>
-    <div class="sk-cube sk-cube-6"></div>
-    <div class="sk-cube sk-cube-7"></div>
-    <div class="sk-cube sk-cube-8"></div>
-    <div class="sk-cube sk-cube-9"></div>
-  </div>
-</body>
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="shortcut icon" href="icon.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>七辰资源库</title>
-        <link rel="stylesheet" href="css/style.css" />
-    </head>
-<body>
-    <header>
-        <button id="open-sidebar-button" onclick="openSidebar()">☰</button> 
-        <h1>七辰资源库</h1>
-        <input type="text" id="search" placeholder="搜索资源..." oninput="searchResources('')" />
-    </header>
-    <sidebar>
-        <div id="bar-wrap">
-            <div id="sidebar"></div>
-            <div id="subbar"></div>
+    <!-- 加载动画容器（放在所有内容最前面） -->
+    <div id="loader" class="loader-wrapper">
+        <div class="sk-cube-grid">
+            <div class="sk-cube sk-cube-1"></div>
+            <div class="sk-cube sk-cube-2"></div>
+            <div class="sk-cube sk-cube-3"></div>
+            <div class="sk-cube sk-cube-4"></div>
+            <div class="sk-cube sk-cube-5"></div>
+            <div class="sk-cube sk-cube-6"></div>
+            <div class="sk-cube sk-cube-7"></div>
+            <div class="sk-cube sk-cube-8"></div>
+            <div class="sk-cube sk-cube-9"></div>
         </div>
-    </sidebar>
-    <main>
-        <section class="resources">
-            <div id="main">
-                <div id="text">
-                </div>
-                <ul id="resources-list">
-                    <!-- 资源列表将动态加载 -->
-                </ul>
-            </div>
-        </section>
-    </main>
+    </div>
 
-    <footer>
-        <p>&copy; 2025 七辰资源库. All Rights Reserved.</p>
-    </footer>
+    <!-- 页面内容容器 -->
+    <div id="content" style="display:none;">
+        <header>
+            <button id="open-sidebar-button" onclick="openSidebar()">☰</button>
+            <h1>七辰资源库</h1>
+            <input type="text" id="search" placeholder="搜索资源..." oninput="searchResources('')" />
+        </header>
+        <sidebar>
+            <div id="bar-wrap">
+                <div id="sidebar"></div>
+                <div id="subbar"></div>
+            </div>
+        </sidebar>
+        <main>
+            <section class="resources">
+                <div id="main">
+                    <div id="text"></div>
+                    <ul id="resources-list">
+                        <!-- 资源列表将动态加载 -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2025 七辰资源库. All Rights Reserved.</p>
+        </footer>
+    </div>
 
     <script src="js/app.js"></script>
     <script src="js/sidebar.js"></script>
+    
+    <!-- 加载控制脚本 -->
+    <script>
+    window.addEventListener('load', function() {
+        // 隐藏加载动画
+        document.getElementById('loader').style.display = 'none';
+        // 显示页面内容
+        document.getElementById('content').style.display = 'block';
+    });
+    </script>
 </body>
 </html>
