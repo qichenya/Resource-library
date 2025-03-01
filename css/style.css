@@ -1,4 +1,55 @@
 /* 2025-02-18 by:4c01   zako qichen*/
+
+/* loading.css */
+.sk-cube-grid {
+  width: 4em;
+  height: 4em;
+  margin: auto; 
+}
+.sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: #e04960;
+  float: left;
+  animation: sk-cube-grid-scale-delay 1.3s infinite ease-in-out;
+}
+.sk-cube-1 {
+  animation-delay: 0.2s;
+}
+.sk-cube-2 {
+  animation-delay: 0.3s;
+}
+.sk-cube-3 {
+  animation-delay: 0.4s;
+}
+.sk-cube-4 {
+  animation-delay: 0.1s;
+}
+.sk-cube-5 {
+  animation-delay: 0.2s;
+}
+.sk-cube-6 {
+  animation-delay: 0.3s;
+}
+.sk-cube-7 {
+  animation-delay: 0s;
+}
+.sk-cube-8 {
+  animation-delay: 0.1s;
+}
+.sk-cube-9 {
+  animation-delay: 0.2s;
+}
+@keyframes sk-cube-grid-scale-delay {
+  0%, 70%, 100% {
+    transform: scale3D(1,1,1);
+  }
+  35%           {
+    transform: scale3D(0,0,1);
+  }
+}
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0px;
