@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>404 Not Found</title>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <style>
+        html {
+            min-height: 100%;
+        }
+
+        body {
+            box-sizing: border-box;
+            height: 100%;
+            background-color: #000000;
+            background-image: radial-gradient(#11581E, #041607), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: 'Inconsolata', Helvetica, sans-serif;
+            font-size: 1.5rem;
+            color: rgba(128, 255, 128, 0.8);
+            text-shadow:
+                0 0 1ex rgba(51, 255, 51, 1),
+                0 0 2px rgba(255, 255, 255, 0.8);
+            overflow: hidden;
+        }
+
+        .noise {
+            pointer-events: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: -1;
+            opacity: .02;
+        }
+
+        .overlay {
+            pointer-events: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:
+                repeating-linear-gradient(
+                    180deg,
+                    rgba(0, 0, 0, 0) 0,
+                    rgba(0, 0, 0, 0.3) 50%,
+                    rgba(0, 0, 0, 0) 100%);
+            background-size: auto 4px;
+            z-index: 1;
+        }
+
+        .overlay::before {
+            content: "";
+            pointer-events: none;
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(
+                0deg,
+                transparent 0%,
+                rgba(32, 128, 32, 0.2) 2%,
+                rgba(32, 128, 32, 0.8) 3%,
+                rgba(32, 128, 32, 0.2) 3%,
+                transparent 100%);
+            background-repeat: no-repeat;
+            animation: scan 7.5s linear 0s infinite;
+        }
+
+        @keyframes scan {
+            0%        { background-position: 0 -100vh; }
+            35%, 100% { background-position: 0 100vh; }
+        }
+
+        .terminal {
+            box-sizing: inherit;
+            position: absolute;
+            height: 100%;
+            width: 1000px;
+            max-width: 100%;
+            padding: 4rem;
+            text-transform: uppercase;
+        }
+
+        .output {
+            color: rgba(128, 255, 128, 0.8);
+            text-shadow:
+                0 0 1px rgba(51, 255, 51, 0.4),
+                0 0 2px rgba(255, 255, 255, 0.8);
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .typing {
+            border-right: 2px solid rgba(128, 255, 128, 0.8);
+            white-space: pre;
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: bottom;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent }
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            position: relative;
+        }
+
+        a::before {
+            content: "[";
+        }
+
+        a::after {
+            content: "]";
+        }
+
+        .errorcode {
+            color: white;
+            animation: errorGlow 2s infinite;
+        }
+
+        @keyframes errorGlow {
+            50% { text-shadow: 0 0 10px rgba(255,255,255,0.8); }
+        }
+    </style>
+</head>
+<body>
+    <div class="noise"></div>
+    <div class="overlay"></div>
+    <div class="terminal">
+        <h1>Error <span class="errorcode">404</span></h1>
+        <p class="output"><span id="line1" class="typing"></span></p>
+        <p class="output"><span id="line2" class="typing"></span></p>
+        <p class="output"><span id="line3" class="typing"></span></p>
+        <p class="output"><span id="line4" class="typing"></span></p>
+    </div>
+
+    <script>
+        // 配置参数
+        const config = {
+            typingSpeed: 50,    // 打字速度（字符/毫秒）
+            lineDelay: 800,     // 行间延迟
+            cursorDuration: 0.8 // 光标闪烁速度
+        };
+
+        // 打字机效果函数
+        function typeText(element, text) {
+            return new Promise(resolve => {
+                let charIndex = 0;
+                const speed = Math.max(20, 100 - config.typingSpeed);
+                
+                element.style.borderRight = `2px solid rgba(128, 255, 128, 0.8)`;
+                element.style.animation = `blink ${config.cursorDuration}s infinite`;
+
+                function type() {
+                    if (charIndex < text.length) {
+                        element.textContent += text.charAt(charIndex);
+                        charIndex++;
+                        setTimeout(type, speed);
+                    } else {
+                        element.style.animation = '';
+                        element.style.borderRight = 'none';
+                        resolve();
+                    }
+                }
+                type();
+            });
+        }
+
+        // 初始化
+        async function init() {
+            const lines = [
+                {
+                    text: "您访问的页面不存在",
+                    element: document.getElementById('line1')
+                },
+                {
+                    text: "Запрашиваемая страница не найдена",
+                    element: document.getElementById('line2')
+                },
+                {
+                    text: "如有问题请联系qichenawa@outlook.com",
+                    element: document.getElementById('line3')
+                },
+                {
+                    text: "По вопросам обращайтесь qichenawa@outlook.com",
+                    element: document.getElementById('line4')
+                }
+            ];
+
+            for (const [index, line] of lines.entries()) {
+                if (index > 0) await new Promise(r => setTimeout(r, config.lineDelay));
+                await typeText(line.element, line.text);
+            }
+        }
+
+        // 启动动画
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(init, 100); // 初始延迟
+        });
+    </script>
+</body>
+</html>
