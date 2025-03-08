@@ -12,15 +12,69 @@ body {
     color: #333;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+/* 新增CSS变量 */
+:root {
+    --primary-color: #3a86ff;
+    --secondary-color: #ff006e;
+    --shadow-base: 0 2px 10px rgba(0,0,0,0.1);
+    --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.container {
+    /* 保持原有属性 */
+    max-width: 1000px;
+    margin: 20px auto;
+    transition: transform 0.3s var(--transition-timing); /* 新增容器过渡 */
+    
+    /* 优化后的属性 */
+    padding: 2rem;
+    box-shadow: var(--shadow-base);
+}
+
+.download-btn {
+    /* 增强按钮交互 */
+    position: relative;
+    overflow: hidden;
+    transition: 
+        background 0.3s,
+        transform 0.2s,
+        box-shadow 0.3s;
+    
+    /* 新增悬停效果 */
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(58,134,255,0.3);
+    }
+    
+    /* 新增点击效果 */
+    &:active {
+        transform: translateY(1px);
+    }
+}
+
+/* 新增加载动画 */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.loading {
+    animation: pulse 1.5s infinite;
+}
+
+/* 增强响应式设计 */
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+        margin: 10px;
+    }
+    
+    .download-btn {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+}
 .header {
     text-align: center;
     padding: 30px 0;
@@ -31,7 +85,6 @@ h1 {
     color: #2c3e50;
     margin-bottom: 10px;
 }
-
 .download-btn {
     display: inline-block;
     background: #3cf;
@@ -44,33 +97,27 @@ h1 {
     font-size: 18px;
     transition: background 0.3s;
 }
-
 .download-btn:hover {
     background: #39f;
 }
-
 .info-box {
     background: #f8f9fa;
     padding: 20px;
     border-radius: 5px;
     margin: 20px 0;
 }
-
 .details {
     margin: 30px 0;
 }
-
 h2 {
     color: #34495e;
     margin: 20px 0;
     padding-bottom: 10px;
     border-bottom: 2px solid #eee;
 }
-
 ul {
     padding-left: 30px;
 }
-
 .warning {
     color: #e74c3c;
     background: #fdeded;
@@ -78,7 +125,6 @@ ul {
     border-radius: 5px;
     margin: 15px 0;
 }
-
 footer {
     text-align: center;
     margin-top: 30px;
@@ -86,7 +132,6 @@ footer {
     color: #666;
     border-top: 1px solid #eee;
 }
-
 @media (max-width: 768px) {
     .container {
         margin: 10px;

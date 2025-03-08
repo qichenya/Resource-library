@@ -1,43 +1,48 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
     <head>
-        <meta charset="UTF-8" />
-        <link rel="shortcut icon" href="icon.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="七辰资源库分类浏览 - 按类别查看精选数字资源">
+        <meta name="keywords" content="资源分类,软件分类,学习资料分类">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <title>分类 - 七辰资源库</title>
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style.css" preload>
     </head>
-<body>
+    <body>
     <header>
-        <button id="open-sidebar-button" onclick="openSidebar()">☰</button> 
+        <button id="open-sidebar-button" aria-label="打开侧边栏" onclick="openSidebar()">☰</button>
         <h1>七辰资源库</h1>
-        <input type="text" id="search" placeholder="搜索资源..." oninput="searchResources('category')" />
+        <input type="text" id="search" 
+               placeholder="搜索资源..." 
+               aria-label="分类资源搜索"
+               oninput="searchResources('category')">
     </header>
-    <sidebar>
-        <div id="bar-wrap">
+
+    <aside>
+        <div id="bar-wrap" role="navigation">
             <div id="sidebar"></div>
             <div id="subbar"></div>
         </div>
-    </sidebar>
-    <main>
-        <section class="resources">
-            <div id="main">
+    </aside>
+
+    <main role="main">
+        <section class="resources" aria-labelledby="category-name">
+            <div id="main-content">
                 <div id="text">
-                <h2 id="category-name"></h2>
+                    <h2 id="category-name" role="heading" aria-level="2"></h2>
                 </div>
-                <ul id="resources-list"></ul>
-                    <!-- 资源列表将动态加载 -->
-                </ul>
+                <ul id="resources-list" role="list"></ul>
             </div>
         </section>
     </main>
-    
-    <footer>
+
+    <footer role="contentinfo">
         <p>&copy; 2025 七辰资源库. All Rights Reserved.</p>
     </footer>
 
-    <script src="js/app.js"></script>
-    <script src="js/sidebar.js"></script>
-</body>
+    <script src="js/app.js" defer></script>
+    <script src="js/sidebar.js" defer></script>
+    </body>
 </html>
 

@@ -1,40 +1,54 @@
 <!doctype html>
 <html lang="zh-CN">
     <head>
-        <meta charset="UTF-8" />
-        <link rel="shortcut icon" href="icon.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="七辰资源库 - 提供丰富的数字资源下载与分享">
+        <meta name="keywords" content="资源下载,软件工具,学习资料">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <title>七辰资源库</title>
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preload" href="css/style.css" as="style">
     </head>
+    <body>
     <header>
-        <button id="open-sidebar-button" onclick="openSidebar()">☰</button> 
+        <!-- 侧边栏打开按钮，点击调用 openSidebar 函数 -->
+        <button id="open-sidebar-button" aria-label="打开侧边栏" onclick="openSidebar()">☰</button>
         <h1>七辰资源库</h1>
-        <input type="text" id="search" placeholder="搜索资源..." oninput="searchResources('')" />
+        
+        <!-- 搜索框，输入时调用 searchResources 函数 -->
+        <input type="text" id="search" placeholder="搜索资源..." 
+               aria-label="资源搜索" 
+               oninput="searchResources('')">
     </header>
-    <sidebar>
+
+    <!-- 使用 aside 代替 sidebar 作为侧边栏 -->
+    <aside>
         <div id="bar-wrap">
-            <div id="sidebar"></div>
-            <div id="subbar"></div>
+            <div id="sidebar" role="navigation"></div>
+            <div id="subbar" role="navigation"></div>
         </div>
-    </sidebar>
-    <main>
-        <section class="resources">
+    </aside>
+
+    <main role="main">
+        <section class="resources" aria-labelledby="resources-heading">
             <div id="main">
-                <div id="text">
-                </div>
-                <ul id="resources-list">
+                <div id="text"></div>
+                <ul id="resources-list" role="list">
                     <!-- 资源列表将动态加载 -->
                 </ul>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <p>&copy; 2025 七辰资源库. All Rights Reserved.</p>
     </footer>
 
-    <script src="js/app.js"></script>
-    <script src="js/sidebar.js"></script>
-</body>
+    <!-- 引入应用脚本 -->
+    <script src="js/app.js" defer></script>
+    <!-- 引入侧边栏脚本 -->
+    <script src="js/sidebar.js" defer></script>
+    </body>
 </html>

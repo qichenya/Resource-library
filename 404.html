@@ -5,6 +5,11 @@
     <title>404 Not Found</title>
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
     <style>
+        /* 定义背景图片 URL 变量，减少重复 */
+        :root {
+            --bg-image: url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+        }
+
         html {
             min-height: 100%;
         }
@@ -13,7 +18,7 @@
             box-sizing: border-box;
             height: 100%;
             background-color: #000000;
-            background-image: radial-gradient(#11581E, #041607), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+            background-image: radial-gradient(#11581E, #041607), var(--bg-image);
             background-repeat: no-repeat;
             background-size: cover;
             font-family: 'Inconsolata', Helvetica, sans-serif;
@@ -30,7 +35,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background-image: url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+            background-image: var(--bg-image);
             background-repeat: no-repeat;
             background-size: cover;
             z-index: -1;
@@ -164,7 +169,11 @@
 
         // 打字机效果函数
         function typeText(element, text) {
-            return new Promise(resolve => {
+            return new Promise((resolve) => {
+                if (!element) {
+                    console.error('Element not found for typing effect.');
+                    return resolve();
+                }
                 let charIndex = 0;
                 const speed = Math.max(20, 100 - config.typingSpeed);
                 
@@ -208,7 +217,7 @@
             ];
 
             for (const [index, line] of lines.entries()) {
-                if (index > 0) await new Promise(r => setTimeout(r, config.lineDelay));
+                if (index > 0) await new Promise((r) => setTimeout(r, config.lineDelay));
                 await typeText(line.element, line.text);
             }
         }
