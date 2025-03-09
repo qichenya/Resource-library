@@ -18,5 +18,30 @@
 - **多平台适配**  
   兼容 PC/移动端访问
 
-## 修改方法
-- **只要修改config/meta.json就可以**
+## 项目背景
+为应对互联网软件下载渠道混乱、捆绑安装等问题，我们打造了这个开源下载平台。平台采用JSON配置文件驱动，通过规范化软件信息展示和下载渠道，帮助用户快速获取安全可靠的软件资源。
+
+## 安装指南
+1. 克隆仓库到本地
+2. 安装Live Server等静态服务器环境
+3. 按需修改config/meta.json配置文件
+4. 部署到任意静态托管服务
+
+## 使用说明
+- 在meta.json中添加软件条目时，请确保包含以下字段：
+  - `key`：软件唯一标识
+  - `displayName`：软件显示名称
+  - `displayName`：软件描述
+  - `downloadLink`：官方下载链接
+  - `iconLink`：软件图标链接
+  - `category`：软件分类（development/tool/defender等）
+  - `windows/android`：平台兼容性标识
+
+## 贡献指南
+欢迎通过GitHub提交Pull Request：
+- 添加新的软件资源
+- 改进现有功能
+- 修复文档错漏
+
+## 开源协议
+本项目采用 [MIT License](LICENSE)，可自由用于个人和商业用途。
