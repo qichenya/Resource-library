@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="zh-CN">
     <head>
+        <!-- 已有元数据和链接 -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="七辰资源库 - 提供丰富的数字资源下载与分享">
@@ -10,45 +11,160 @@
         <title>七辰资源库</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="preload" href="css/style.css" as="style">
+        <style>
+            /* 已有载入动画样式 */
+            #loader {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.9);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+                opacity: 1;
+                transition: opacity 0.3s ease-out; /* 添加透明度过渡动画 */
+            }
+
+            /* 已有 spinner 样式 */
+            .spinner {
+                border: 16px solid rgba(0, 0, 0, 0.1);
+                border-top: 16px solid #3498db;
+                border-radius: 50%;
+                width: 120px;
+                height: 120px;
+                animation: spin 1s linear infinite; /* 加快旋转速度 */
+                transform: translateZ(0); /* 开启硬件加速 */
+            }
+
+            /* 已有 spin 动画 */
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+
+            /* 新增加载动画样式 */
+            .loading-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(44, 44, 44, 0.8);
+                display: none;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+                overflow: hidden;
+            }
+
+            .loading-animation {
+                width: 80px;
+                height: 80px;
+                background: conic-gradient(from 0deg at 50% 50%, #00000000 0%, #ffffff 100%);
+                border-radius: 50%;
+                position: relative;
+                animation: spin 1.5s linear infinite;
+            }
+
+            .loading-animation::before, .loading-animation::after {
+                content: '';
+                position: absolute;
+                inset: 6px;
+                background-color: #1f1f1f;
+                border-radius: 50%;
+            }
+
+            .loading-animation::before {
+                inset: 10px;
+                background: radial-gradient(circle at center, #1f1f1f 0%, #2e2e2e 100%);
+                animation: pulse 1.5s ease-in-out infinite;
+            }
+
+            .loading-text {
+                margin-top: 20px;
+                font-size: 20px;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                animation: flicker 2s infinite;
+            }
+
+            @keyframes pulse {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.1); }
+            }
+
+            @keyframes flicker {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.7; }
+            }
+        </style>
     </head>
     <body>
-    <header>
-        <!-- 侧边栏打开按钮，点击调用 openSidebar 函数 -->
-        <button id="open-sidebar-button" aria-label="打开侧边栏" onclick="openSidebar()">☰</button>
-        <h1>七辰资源库</h1>
-        
-        <!-- 搜索框，输入时调用 searchResources 函数 -->
-        <input type="text" id="search" placeholder="搜索资源..." 
-               aria-label="资源搜索" 
-               oninput="searchResources('')">
-    </header>
-
-    <!-- 使用 aside 代替 sidebar 作为侧边栏 -->
-    <aside>
-        <div id="bar-wrap">
-            <div id="sidebar" role="navigation"></div>
-            <div id="subbar" role="navigation"></div>
+        <!-- 新增加载动画 HTML 结构 -->
+        <div class="loading-overlay">
+            <div class="loading-animation"></div>
+            <div class="loading-text"></div>
         </div>
-    </aside>
 
-    <main role="main">
-        <section class="resources" aria-labelledby="resources-heading">
-            <div id="main">
-                <div id="text"></div>
-                <ul id="resources-list" role="list">
-                    <!-- 资源列表将动态加载 -->
-                </ul>
+        <!-- 移除第一个载入动画 -->
+        <!-- <div id="loader">
+            <div class="spinner"></div>
+        </div> -->
+
+        <header>
+            <!-- 侧边栏打开按钮，点击调用 openSidebar 函数 -->
+            <button id="open-sidebar-button" aria-label="打开侧边栏" onclick="openSidebar()">☰</button>
+            <h1>七辰资源库</h1>
+            
+            <!-- 搜索框，输入时调用 searchResources 函数 -->
+            <input type="text" id="search" placeholder="搜索资源..." 
+                   aria-label="资源搜索" 
+                   oninput="searchResources('')">
+        </header>
+
+        <!-- 使用 aside 代替 sidebar 作为侧边栏 -->
+        <aside>
+            <div id="bar-wrap">
+                <div id="sidebar" role="navigation"></div>
+                <div id="subbar" role="navigation"></div>
             </div>
-        </section>
-    </main>
+        </aside>
 
-    <footer role="contentinfo">
-        <p>&copy; 2025 七辰资源库. All Rights Reserved.</p>
-    </footer>
+        <main role="main">
+            <section class="resources" aria-labelledby="resources-heading">
+                <div id="main">
+                    <div id="text"></div>
+                    <ul id="resources-list" role="list">
+                        <!-- 资源列表将动态加载 -->
+                    </ul>
+                </div>
+            </section>
+        </main>
 
-    <!-- 引入应用脚本 -->
-    <script src="js/app.js" defer></script>
-    <!-- 引入侧边栏脚本 -->
-    <script src="js/sidebar.js" defer></script>
+        <footer role="contentinfo">
+            <p>&copy; 2025 七辰资源库. All Rights Reserved.</p>
+        </footer>
+
+        <!-- 引入应用脚本 -->
+        <script src="js/app.js" defer></script>
+        <!-- 引入侧边栏脚本 -->
+        <script src="js/sidebar.js" defer></script>
+        <script>
+            window.onload = function() {
+                // 确保载入动画至少显示 1 秒
+                setTimeout(function() {
+                    // 隐藏新增的加载动画
+                    const loadingOverlay = document.querySelector('.loading-overlay');
+                    loadingOverlay.style.display = 'none';
+                }, 1000); 
+
+                // 在页面加载时显示新增的加载动画
+                const loadingOverlay = document.querySelector('.loading-overlay');
+                loadingOverlay.style.display = 'flex';
+            };
+        </script>
     </body>
 </html>
