@@ -1,0 +1,25 @@
+{
+  "resources": [
+    {
+      "id": 1001,
+      "name": "AI开发套件",
+      "icon": "https://cdn-icons-png.flaticon.com/512/1534/1534959.png",
+      "downloadLink": "/downloads/ai-suite-v1.2.zip",
+      "description": "包含最新AI开发工具和SDK"
+    },
+    {
+      "id": 1002,
+      "name": "设计资源包",
+      "icon": "https://cdn-icons-png.flaticon.com/512/1534/1534943.png",
+      "downloadLink": "https://example.com/download/design-pack",
+      "description": "精选UI设计素材与模板合集"
+    },
+    {
+      "id": 1003,
+      "name": "文档模板库",
+      "icon": "https://cdn-icons-png.flaticon.com/512/1534/1534973.png",
+      "downloadLink": "/downloads/doc-templates.7z",
+      "description": "技术文档标准模板集合"
+    }
+  ]
+}
