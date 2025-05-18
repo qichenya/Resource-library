@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>资源中心</title>
+  <link href="https://cdn.bootcss.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .resource-card {
+      transition: transform 0.2s;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .resource-card:hover {
+      transform: translateY(-5px);
+    }
+    .category-badge {
+      position: absolute;
+      top: -10px;
+      right: 15px;
+      font-size: 0.8rem;
+    }
+  </style>
+  <script>
+    // 优化后的刷新机制
+    let isUpdating = false;
+    
+    async function checkUpdate() {
+      if(isUpdating) return;
+      
+      try {
+        const res = await fetch('/version');
+        const { version } = await res.json();
+        
+        if(localStorage.lastVersion !== version) {
+          isUpdating = true;
+          const resources = await fetch('/get-resources').then(r => r.json());
+          updateResources(resources);
+          localStorage.lastVersion = version;
+        }
+      } finally {
+        isUpdating = false;
+      }
+    }
+</script>
+<script>
+function updateResources(resources) {
+  const container = document.querySelector('.resource-container');
+  container.innerHTML = resources.map(resource => `
+    <div class="col-lg-4 col-md-6">
+      <div class="card resource-card h-100 border-0">
+        <div class="card-body position-relative">
+          <span class="badge bg-success category-badge">${resource.category}</span>
+          <h5 class="card-title mb-3">${resource.title}</h5>
+          <p class="card-text text-muted mb-4">${resource.description}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <small class="text-muted">${new Date(resource.createdAt).toLocaleDateString()}</small>
+            <a href="${resource.url}" class="btn btn-primary stretched-link" target="_blank">
+              立即访问 <span class="ms-2">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+</script>
+
+  </script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <div class="d-flex flex-grow-1 align-items-center">  <!-- 新增flex容器 -->
+        <a class="navbar-brand fw-bold me-4" href="/">📚 资源共享中心</a> <!-- 添加右侧间距 -->
+        <form class="d-flex flex-grow-1" action="/search" method="POST">
+          <input class="form-control me-2" 
+                 type="search" 
+                 name="keyword"
+                 placeholder="搜索资源..." 
+                 required
+                 style="max-width: 400px">
+          <button class="btn btn-light" type="submit">搜索</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-4">
+    <div class="row g-4">
+      <% resources.forEach(resource => { %>
+        <div class="col-lg-4 col-md-6">
+          <div class="card resource-card h-100 border-0">
+            <div class="card-body position-relative">
+              <span class="badge bg-success category-badge"><%= resource.category %></span>
+              <h5 class="card-title mb-3"><%= resource.title %></h5>
+              <p class="card-text text-muted mb-4"><%= resource.description %></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted"><%= new Date(resource.createdAt).toLocaleDateString() %></small>
+                <a href="<%= resource.url %>" class="btn btn-primary stretched-link" target="_blank">
+                  立即访问 <span class="ms-2">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</body>
+</html>
