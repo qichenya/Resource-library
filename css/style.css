@@ -197,15 +197,21 @@ a {
 }
 
 /* sidebar样式 */
+/* 删除以下侧边栏相关样式 */
 div#bar-wrap {
     position: fixed;
     top: 120px;
     background-color: #fff;
     overflow: hidden;
     height: 90%;
-    /* 删除泛光效果 */
     box-shadow: none;
     border-left: 0px;
+}
+div#sidebar, div#subbar {
+    display: none !important;
+}
+button#open-sidebar-button {
+    display: none;
 }
 div#sidebar {
     float: left;
@@ -462,5 +468,9 @@ footer {
         padding-left: 4%;
         padding-right: 3%;
     }
+}
+div#main {
+    padding-left: 20px;  /* 移除侧边栏后的间距调整 */
+    width: calc(100% - 40px);
 }
 
