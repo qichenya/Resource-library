@@ -27,6 +27,21 @@
             "android": true
         },
         {
+            "key": "trae",
+            "displayName": "Trae",
+            "detailTitle": "一个类似vsc但附带ai功能的代码编辑器!",
+            "website": "https://www.trae.ai/",
+            "downloadLink": "https://www.trae.ai/download",
+            "readme": null,
+            "overrideWarning": "",
+            "iconLink": null,
+            "category": "coding",
+            "windows": true,
+            "ios": true,
+            "linux": true,
+            "android": false
+        },
+        {
             "key": "vscode",
             "displayName": "Visual Studio Code",
             "detailTitle": "微软开发的轻量级跨平台代码编辑器，支持丰富的插件生态和多种编程语言，适合各类开发场景",

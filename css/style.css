@@ -62,7 +62,7 @@ header {
     position: fixed;
     width: 100%;
     background-color: #09f;
-    background: linear-gradient(to right,#03f 1%,10%,#09f 40%, pink);
+    background: linear-gradient(to right, #2c3e50 1%, 10%, #34495e 40%, #7f8c8d);
     color: #fff;
     padding: 20px 0px 20px 0px;
     text-align: center;
@@ -203,7 +203,8 @@ div#bar-wrap {
     background-color: #fff;
     overflow: hidden;
     height: 90%;
-    box-shadow: 5px 5px 10px rgba(100,200,255, 0.8);
+    /* 删除泛光效果 */
+    box-shadow: none;
     border-left: 0px;
 }
 div#sidebar {
@@ -274,13 +275,120 @@ button#open-sidebar-button:hover {
 }
 
 footer {
-    background-color: #09f;
-    background: linear-gradient(to right,#03f 1%,5%,#09f 40%,90%, pink);
+    background-color: rgba(0, 0, 0, 0.158);
+    background: linear-gradient(to right,#2c3e50 1%,5%,#34495e 40%,90%, #7f8c8d);
     color: #fff;
     text-align: center;
     padding: 10px 0px 10px 0px;
     width: 100%;
     bottom: 0;
+}
+
+.resource-detail {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.resource-detail h2 {
+    font-size: 24px;
+}
+
+.resource-detail p {
+    font-size: 16px;
+}
+
+.resource-detail a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* category的自适应 */
+.categories ul,
+.resources ul {
+    list-style-type: none;
+    padding: 0;
+    padding-top: 20px;
+    overflow: auto;
+}
+@media (max-width: 650px) and (min-width: 500px) {
+    .resources ul {
+        padding-left: 9%;
+        padding-right: 11%;
+    }
+}
+@media (max-width: 500px) {
+    div#content {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    input[type="text"] {
+        margin-top: 20px;
+        padding: 3px;
+        width: 70%;
+        font-size: 16px;
+        border-radius: 30px;
+        border: 10px solid #fff;
+    }
+    button#open-sidebar-button {
+        top: 65px;
+        left: 20px;
+        height: 40px;
+        width: 40px;
+        font-size: x-large;
+    }
+}
+@media (max-width: 1300px) and (min-width: 980px) {
+    .resources ul {
+        padding-left: 4%;
+        padding-right: 3%;
+    }
+}
+
+@media (min-width: 1440px) {
+    .resources ul {
+        padding-left: 4%;
+        padding-right: 3%;
+    }
+}
+/* 修改侧边栏边框色 */
+div#sidebar {
+    border-right: #2c3e50 solid 3px;
+    border-bottom: #2c3e50 solid 100px;
+}
+
+/* 修改按钮悬停效果 */
+button#open-subbar-button:hover {
+    border-left: #34495e solid 10px;
+}
+/* sidebar button */
+button#open-sidebar-button {
+    width: 50px;
+    height: 50px;
+    padding: 0px 5px 5px 5px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+
+    color: #333;
+    background-color: #eee;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    font-size: xx-large;
+    position: fixed;
+    top: 45px;
+    left: 30px;
+}
+button#open-sidebar-button:hover {
+    background-color: #fff;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    background: linear-gradient(to right,#2c3e50 1%,5%,#34495e 40%,90%, #7f8c8d);
 }
 
 .resource-detail {
