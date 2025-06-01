@@ -54,3 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Error fetching resource:", error);
         });
 });
+
+
+async function loadResourceDetail() {
+    // 新增空链接兜底处理
+    if (!resource.downloadLink || resource.downloadLink.trim() === "") {
+        resource.downloadLink = "/null.html";
+    }
+}
